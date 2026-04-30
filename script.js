@@ -1,16 +1,31 @@
-// --- Intro Splash Screen Logic ---
-window.addEventListener('load', () => {
-  const splash = document.getElementById('intro-splash');
-  if (splash) {
-    // Hide exactly after 1.2 seconds
-    setTimeout(() => {
-      splash.classList.add('hidden');
-      setTimeout(() => splash.remove(), 500); // Remove from DOM after CSS transition
-    }, 1200);
+// Reset body opacity on pageshow (in case user clicks Back button after a smooth page transition)
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted) {
+    document.body.style.opacity = '1';
   }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  // --- Smooth Product Card Navigation ---
+  const navProductCards = document.querySelectorAll('.product-card');
+  navProductCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Don't trigger if they clicked "Add to Cart" button or "Buy Now" button
+      if (e.target.closest('.add-to-cart-btn') || e.target.closest('.btn-buy')) {
+        return;
+      }
+      
+      // Pro Smooth Page Transition
+      document.body.style.transition = 'opacity 0.3s ease';
+      document.body.style.opacity = '0';
+      
+      // Navigate after transition
+      setTimeout(() => {
+        window.location.href = 'product.html';
+      }, 300);
+    });
+  });
   // 1. Smooth Scrolling and Active Nav Link
   const scrollLinks = document.querySelectorAll('.scroll-link');
   const sections = document.querySelectorAll('section');
