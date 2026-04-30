@@ -90,6 +90,7 @@ html, body{
   width: auto;
   object-fit: contain;
   transition: all 0.3s ease;
+  mix-blend-mode: multiply;
 }
 
 
@@ -107,6 +108,7 @@ html, body{
   margin: 0 15px;
   position: relative;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 /* Underline effect for desktop */
@@ -155,18 +157,20 @@ html, body{
 
 .cart-badge {
   position: absolute;
-  top: -4px;
-  right: -8px;
+  top: -2px;
+  right: -6px;
   background: var(--primary-gold);
   color: white;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
-  height: 16px;
-  width: 16px;
+  height: 18px;
+  width: 18px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
+  line-height: 18px;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
 }
 
 /* BUTTON */
