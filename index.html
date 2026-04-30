@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raabi Perfumes</title>
+  <link rel="stylesheet" href="index.css" />
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+</head>
+<body>
+
+  <!-- Navbar Start -->
+  <nav class="navv navbar navbar-expand-lg custom-navbar fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <!-- Left: Mobile Toggler & Desktop Links -->
+      <div class="nav-left d-flex align-items-center" style="flex: 1;">
+        <button
+          class="navbar-toggler p-0 border-0 shadow-none d-lg-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="offcanvas-lg offcanvas-start custom-offcanvas" tabindex="-1" id="navbarContent" aria-labelledby="navbarContentLabel">
+          <div class="offcanvas-header px-4 pt-5 pb-0">
+            <a class="navbar-brand m-0" href="#">
+              <img src="RabiRoyal.png" alt="Logo" class="logo" style="max-height: 80px; width: auto;">
+            </a>
+            <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" data-bs-target="#navbarContent" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body px-4 py-4 p-lg-0">
+            <ul class="navbar-nav align-items-start align-items-lg-center menu-links mt-2 mt-lg-0 w-100">
+              <li class="nav-item w-100 w-lg-auto">
+                <a class="nav-link scroll-link active" href="#home">Home</a>
+              </li>
+              <li class="nav-item w-100 w-lg-auto">
+                <a class="nav-link scroll-link" href="#shop">Shop</a>
+              </li>
+              <li class="nav-item w-100 w-lg-auto">
+                <a class="nav-link scroll-link" href="#shop">Collections</a>
+              </li>
+              <li class="nav-item w-100 w-lg-auto">
+                <a class="nav-link scroll-link" href="#about">About</a>
+              </li>
+              <li class="nav-item w-100 w-lg-auto">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+            <!-- Mobile Only Footer in Menu -->
+            <div class="d-lg-none w-100 mt-5 pt-4 border-top" style="border-color: rgba(0,0,0,0.1) !important;">
+               <button class="shop-btn w-100 text-uppercase tracking-wide explore-btn" style="border-radius: 0;">
+                 <span>Explore Collection</span>
+               </button>
+               <div class="mt-4 d-flex gap-4 align-items-center">
+                 <a href="#" class="icon-link"><i class="bi bi-instagram fs-4"></i></a>
+                 <a href="#" class="icon-link"><i class="bi bi-facebook fs-4"></i></a>
+                 <a href="#" class="icon-link"><i class="bi bi-whatsapp fs-4"></i></a>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center: Logo -->
+      <div class="nav-center d-flex justify-content-center" style="flex: 1;">
+        <a class="navbar-brand m-0" href="#">
+          <img src="RabiRoyal.png" alt="Logo" class="logo">
+        </a>
+      </div>
+
+      <!-- Right: Icons & Buttons -->
+      <div class="nav-right d-flex align-items-center justify-content-end gap-3 z-3 nav-right-icons" style="flex: 1;">
+        <a href="#" id="searchToggle" class="icon-link text-dark text-decoration-none">
+          <i class="bi bi-search"></i>
+        </a>
+        <a href="cart.html" class="icon-link position-relative text-dark text-decoration-none me-2">
+          <i class="bi bi-cart3"></i>
+          <span class="cart-badge">2</span>
+        </a>
+        <div class="d-none d-lg-block">
+            <button class="shop-btn explore-btn">
+              <span>Shop Now</span>
+            </button>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+  <!-- Navbar End -->
+
+  <!-- Search Container (Hidden by default) -->
+  <div class="d-none search-floating-box" id="searchContainer">
+    <div class="d-flex align-items-center w-100">
+      <i class="bi bi-search search-icon text-muted"></i>
+      <input type="text" id="searchInput" class="form-control search-input shadow-none" placeholder="Search for your signature scent...">
+      <button class="btn-close search-close ms-2" id="closeSearch"></button>
+    </div>
+  </div>
+
+  <!-- Hero Section Start -->
+  <section class="hero-section position-relative" id="home">
+    
+    <!-- Auto-scrolling Slider -->
+    <div id="heroCarousel" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-pause="false" data-bs-interval="4000">
+      <div class="carousel-inner h-100">
+        <div class="carousel-item active h-100">
+          <img src="hero-1.png" class="d-block w-100 h-100 hero-img" alt="Luxury Perfume">
+        </div>
+        <div class="carousel-item h-100">
+          <img src="hero-2.png" class="d-block w-100 h-100 hero-img" alt="Premium Fragrance">
+        </div>
+        <div class="carousel-item h-100">
+          <img src="hero-3.png" class="d-block w-100 h-100 hero-img" alt="Signature Scent">
+        </div>
+      </div>
+    </div>
+
+    <!-- Overlay Content -->
+    <div class="hero-overlay d-flex align-items-center">
+      <div class="container">
+        <div class="hero-content text-start">
+          <span class="hero-tag text-white text-uppercase tracking-wide mb-3 d-block">Premium Collection</span>
+          <h1 class="hero-title text-white">Discover Your<br>Signature Scent</h1>
+          <p class="hero-subtitle text-white mt-4 mb-5">Experience the essence of luxury and timeless elegance crafted for the modern individual.</p>
+          <button class="shop-btn hero-shop-btn explore-btn">
+            <span>Explore Collection</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- Hero Section End -->
+
+
+  <!-- Products Section Start -->
+  <section class="products-section py-5" id="shop">
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <span class="text-uppercase tracking-wide" style="color: var(--primary-gold); letter-spacing: 2px; font-size: 14px; font-weight: 500;">Our Collection</span>
+        <h2 class="display-5 mt-2" style="font-weight: 300;">Featured Fragrances</h2>
+      </div>
+
+      <div class="row g-4">
+        <!-- Product Card 1 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="product-card d-flex flex-column">
+            <div class="product-img-wrapper">
+              <img src="hero-1.png" alt="Oud Royal" class="product-img">
+              <div class="product-actions">
+                <button class="btn btn-cart shadow-none text-white"><i class="bi bi-cart-plus me-1"></i> Add to Cart</button>
+              </div>
+            </div>
+            <div class="product-info text-center mt-4 d-flex flex-column flex-grow-1">
+              <h5 class="product-title">Oud Royal</h5>
+              <p class="product-category text-muted mb-2">Eau De Parfum</p>
+              <div class="product-price mb-3">
+                <span class="current-price">$145.00</span>
+              </div>
+              <button class="btn btn-buy w-100 shadow-none mt-auto ">Buy Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="product-card d-flex flex-column">
+            <div class="product-img-wrapper">
+              <img src="hero-2.png" alt="Velvet Rose" class="product-img">
+              <div class="product-actions">
+                <button class="btn btn-cart shadow-none text-white"><i class="bi bi-cart-plus me-1"></i> Add to Cart</button>
+              </div>
+            </div>
+            <div class="product-info text-center mt-4 d-flex flex-column flex-grow-1">
+              <h5 class="product-title">Velvet Rose</h5>
+              <p class="product-category text-muted mb-2">Eau De Parfum</p>
+              <div class="product-price mb-3">
+                <span class="current-price">$120.00</span>
+              </div>
+              <button class="btn btn-buy w-100 shadow-none mt-auto">Buy Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="product-card d-flex flex-column">
+            <div class="product-img-wrapper">
+              <img src="hero-3.png" alt="Amber Nights" class="product-img">
+              <div class="product-actions">
+                <button class="btn btn-cart shadow-none text-white"><i class="bi bi-cart-plus me-1"></i> Add to Cart</button>
+              </div>
+            </div>
+            <div class="product-info text-center mt-4 d-flex flex-column flex-grow-1">
+              <h5 class="product-title">Amber Nights</h5>
+              <p class="product-category text-muted mb-2">Eau De Parfum</p>
+              <div class="product-price mb-3">
+                <span class="current-price">$160.00</span>
+              </div>
+              <button class="btn btn-buy w-100 shadow-none mt-auto">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Products Section End -->
+
+  <!-- About Section Start -->
+  <section class="about-section py-5 position-relative" id="about">
+    <div class="container py-lg-5 my-4">
+      <div class="row align-items-center g-5">
+        <div class="col-12 col-lg-6">
+          <div class="position-relative">
+            <div class="about-img-wrapper">
+              <img src="hero-2.png" alt="About Raabi Perfumes" class="w-100 about-img">
+            </div>
+            <div class="about-experience">
+              <i class="bi bi-stars text-white mb-0" style="font-size: 3rem; line-height: 1;"></i>
+              <span class="text-white ms-3 text-uppercase" style="font-size:11px; letter-spacing:2px; line-height: 1.5;">Premium<br>Quality</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 ps-lg-5 mt-5 mt-lg-0">
+          <span class="text-uppercase tracking-wide mb-3 d-block" style="color: var(--primary-gold); letter-spacing: 2px; font-size: 14px; font-weight: 500;">The Art of Perfumery</span>
+          <h2 class="display-4 mb-4" style="font-weight: 300;">A Legacy of <br>Timeless Elegance</h2>
+          <p class="text-muted mb-4 lead" style="font-weight: 300; line-height: 1.8;">
+            At Raabi Perfumes, we believe that a fragrance is more than just a scent; it is a signature, an invisible garment that dresses the soul. Our journey began with a passion for uncovering the finest ingredients from around the world.
+          </p>
+          <p class="text-muted mb-5" style="font-weight: 300; line-height: 1.8;">
+            Each bottle is meticulously crafted by master perfumers to capture the essence of luxury, heritage, and modern sophistication. We invite you to discover a collection where every drop tells a story of passion and prestige.
+          </p>
+          <button class="shop-btn px-5 py-3 explore-btn" style="border-radius: 50px;">
+            <span>Discover More</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Section End -->
+
+  <!-- Footer Start -->
+  <footer class="footer-section pt-5 pb-3">
+    <div class="container pt-4">
+      <div class="row g-4 mb-5">
+        
+        <!-- Column 1: Brand -->
+        <div class="col-12 col-md-6 col-lg-4 pe-lg-5">
+          <a href="#" class="footer-brand d-inline-block mb-4">
+            <img src="RabiRoyal.png" alt="Raabi Logo" class="footer-logo">
+          </a>
+          <p class="footer-text mb-4">Experience the essence of luxury and timeless elegance. Crafted for the modern individual who seeks perfection in every scent.</p>
+          <div class="footer-social d-flex gap-3">
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="col-6 col-md-6 col-lg-3">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links list-unstyled">
+            <li><a href="#">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Customer Care -->
+        <div class="col-6 col-md-6 col-lg-2">
+          <h5 class="footer-title">Customer Care</h5>
+          <ul class="footer-links list-unstyled">
+            <li><a href="#">My Account</a></li>
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <h5 class="footer-title">Newsletter</h5>
+          <p class="footer-text mb-3">Subscribe to receive updates, access to exclusive deals, and more.</p>
+          <form class="footer-newsletter d-flex mt-3">
+            <input type="email" class="form-control shadow-none" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-subscribe shadow-none"><i class="bi bi-arrow-right"></i></button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom pt-4 border-top text-center text-md-start d-md-flex justify-content-between align-items-center">
+        <p class="mb-0 footer-copy">&copy; 2026 Raabi Perfumes. All rights reserved.</p>
+        <div class="footer-payment mt-3 mt-md-0 d-flex gap-2 justify-content-center">
+          <i class="bi bi-credit-card fs-4"></i>
+          <i class="bi bi-paypal fs-4"></i>
+          <i class="bi bi-wallet2 fs-4"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Script for interactions -->
+  <script src="script.js"></script>
+
+</body>
+</html>
