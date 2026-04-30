@@ -245,10 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const qtyInput = document.getElementById('qty');
       const quantity = parseInt(qtyInput.value) || 1;
       
-      let size = "50 ML";
-      if (document.getElementById('size100') && document.getElementById('size100').checked) {
-        size = "100 ML";
-      }
+      const size = "100 ML";
 
       addToCart({
         id, name, price, img, size, quantity, sourceBtn: productAddToCartBtn
