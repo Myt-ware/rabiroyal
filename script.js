@@ -1,3 +1,15 @@
+// --- Intro Splash Screen Logic ---
+window.addEventListener('load', () => {
+  const splash = document.getElementById('intro-splash');
+  if (splash) {
+    // Hide exactly after 1.2 seconds
+    setTimeout(() => {
+      splash.classList.add('hidden');
+      setTimeout(() => splash.remove(), 500); // Remove from DOM after CSS transition
+    }, 1200);
+  }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Smooth Scrolling and Active Nav Link
   const scrollLinks = document.querySelectorAll('.scroll-link');

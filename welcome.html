@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome - Raabi Perfumes</title>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-gold: #C59D5F;
+      --dark-bg: #050505;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--dark-bg);
+      color: white;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Ambient Glow Background */
+    .glow-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 60vw;
+      height: 60vw;
+      background: radial-gradient(circle, rgba(197, 157, 95, 0.15) 0%, rgba(5, 5, 5, 0) 70%);
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      pointer-events: none;
+      animation: pulseGlow 4s infinite alternate ease-in-out;
+    }
+
+    @keyframes pulseGlow {
+      0% { opacity: 0.6; transform: translate(-50%, -50%) scale(0.9); }
+      100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      width: 180px;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: scale(0.8) translateY(20px);
+      animation: revealLogo 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      animation-delay: 0.5s;
+    }
+
+    .welcome-text {
+      font-size: 14px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      font-weight: 400;
+      margin-bottom: 15px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: revealText 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      animation-delay: 1s;
+    }
+
+    .title {
+      font-size: 42px;
+      font-weight: 300;
+      margin-bottom: 50px;
+      letter-spacing: 1px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: revealText 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      animation-delay: 1.3s;
+    }
+
+    .enter-btn {
+      padding: 16px 45px;
+      background: transparent;
+      border: 1px solid var(--primary-gold);
+      color: var(--primary-gold);
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 50px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: revealText 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      animation-delay: 1.8s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .enter-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--primary-gold);
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .enter-btn:hover {
+      color: var(--dark-bg);
+      font-weight: 500;
+      box-shadow: 0 10px 30px rgba(197, 157, 95, 0.3);
+    }
+
+    .enter-btn:hover::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    /* Page Transition Overlay */
+    .page-transition {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--dark-bg);
+      z-index: 9999;
+      transform: translateY(100%);
+      transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    .page-transition.active {
+      transform: translateY(0);
+    }
+
+    @keyframes revealLogo {
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    @keyframes revealText {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .logo { width: 140px; margin-bottom: 30px; }
+      .welcome-text { font-size: 12px; letter-spacing: 3px; }
+      .title { font-size: 32px; margin-bottom: 40px; }
+      .enter-btn { padding: 14px 35px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Glowing Background -->
+  <div class="glow-bg"></div>
+
+  <!-- Content -->
+  <div class="content-wrapper">
+    <!-- Note: Assuming RabiRoyal.png is black text, we might need to apply a filter or use a light logo if available. 
+         Applying invert to make it white/gold if it's dark -->
+    <img src="RabiRoyal.png" alt="Raabi Perfumes" class="logo" style="filter: brightness(0) invert(1);">
+    
+    <div class="welcome-text">Welcome to</div>
+    <h1 class="title">The Art of Perfumery</h1>
+    
+    <a href="index.html" class="enter-btn" id="enterBtn">Enter Boutique</a>
+  </div>
+
+  <!-- Transition Overlay -->
+  <div class="page-transition" id="transitionOverlay"></div>
+
+  <script>
+    document.getElementById('enterBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      const transitionOverlay = document.getElementById('transitionOverlay');
+      transitionOverlay.classList.add('active');
+      
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 800); // Wait for transition to cover screen before redirecting
+    });
+  </script>
+</body>
+</html>
