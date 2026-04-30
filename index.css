@@ -599,6 +599,63 @@ html, body{
   }
 }
 
+/* Extra small mobile adjustments to make card compact */
+@media (max-width: 576px) {
+  .product-card {
+    padding: 12px;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  
+  .product-img-wrapper {
+    border-radius: 8px;
+  }
+  
+  .product-info {
+    padding: 12px 0 0;
+  }
+  
+  .product-title {
+    font-size: 1.15rem;
+    margin-bottom: 4px;
+  }
+  
+  .current-price {
+    font-size: 1rem;
+    margin-top: 2px;
+  }
+  
+  .btn-buy {
+    padding: 10px 0;
+    font-size: 11px;
+    margin-top: 10px;
+  }
+  
+  .product-actions {
+    padding: 10px;
+  }
+  
+  .btn-cart {
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+}
+
+/* ================= SCROLL ANIMATIONS ================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.15s; }
+.reveal-delay-2 { transition-delay: 0.3s; }
+
 /* ================= FOOTER ================= */
 .footer-section {
   background-color: #111111;
